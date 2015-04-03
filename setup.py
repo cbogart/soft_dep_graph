@@ -8,7 +8,7 @@ README = open(os.path.join(here, 'README.md')).read()
 version = '0.1'
 
 install_requires = [
-    "numpy", "community"
+    "numpy", "scipy", "community", "networkx"
 ]
 
 
@@ -30,9 +30,5 @@ setup(name='soft_dep_graphing',
     packages=find_packages(),
     zip_safe=False,
     install_requires=install_requires,
-    setup_requires = [ "numpy"],
-    entry_points={
-        'console_scripts':
-            ['soft_dep_graphing=soft_dep_graphing:main']
-    }
+    setup_requires = install_requires,
 )
